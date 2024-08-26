@@ -3,7 +3,6 @@
   padding: 0;
 }
 /* ### Self Check
-- The `ul` inside the menu element contains another grid
 - The `ul` inside the nav element contains another grid
 - The sidebar element has a gap of 50px
 - The text elements in the sidebar are centered with grid
@@ -22,6 +21,7 @@
   display: grid;
   gap: 4px;
   grid-template-columns: 1fr 4fr;
+  grid-template-rows: 100px 50px calc(100% - (200px + 50px + 50px)) 50px;
 }
 
 .container div {
@@ -91,8 +91,15 @@
   text-transform: uppercase;
 }
 
+.nav ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  list-style: none;
+}
+
 .article {
   background-color: #bccbde;
+  grid-column: 2 / 3;
 }
 
 .article p {
@@ -120,6 +127,8 @@
 }
 
 .footer {
+  grid-column: 2 / 3;
+  grid-row: 4 / 5;
   background-color: #393f4d;
 }
 
